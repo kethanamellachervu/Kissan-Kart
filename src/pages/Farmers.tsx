@@ -9,7 +9,7 @@ const farmers = [
   {
     id: 1,
     name: "Ramesh Kumar",
-    location: "Punjab",
+    location: "Rangareddy, Telangana",
     specialty: "Organic Vegetables",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ramesh",
     phone: "+91 98765 43210",
@@ -18,7 +18,7 @@ const farmers = [
   {
     id: 2,
     name: "Lakshmi Devi",
-    location: "Tamil Nadu",
+    location: "Medak, Telangana",
     specialty: "Fresh Fruits",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lakshmi",
     phone: "+91 98765 43211",
@@ -27,7 +27,7 @@ const farmers = [
   {
     id: 3,
     name: "Suresh Patel",
-    location: "Gujarat",
+    location: "Sangareddy, Telangana",
     specialty: "Dairy Products",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Suresh",
     phone: "+91 98765 43212",
@@ -36,7 +36,7 @@ const farmers = [
   {
     id: 4,
     name: "Meena Singh",
-    location: "Haryana",
+    location: "Vikarabad, Telangana",
     specialty: "Grains & Pulses",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Meena",
     phone: "+91 98765 43213",
@@ -45,7 +45,7 @@ const farmers = [
   {
     id: 5,
     name: "Arjun Reddy",
-    location: "Andhra Pradesh",
+    location: "Nalgonda, Telangana",
     specialty: "Organic Rice",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Arjun",
     phone: "+91 98765 43214",
@@ -54,7 +54,7 @@ const farmers = [
   {
     id: 6,
     name: "Kavita Sharma",
-    location: "Rajasthan",
+    location: "Nizamabad, Telangana",
     specialty: "Spices & Herbs",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Kavita",
     phone: "+91 98765 43215",

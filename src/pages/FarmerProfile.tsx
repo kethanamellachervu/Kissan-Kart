@@ -15,14 +15,14 @@ const FarmerProfile = () => {
   const farmer = {
     id: 1,
     name: "Ramesh Kumar",
-    location: "Punjab, India",
+    location: "Rangareddy, Telangana",
     specialty: "Organic Vegetables",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ramesh",
     phone: "+91 98765 43210",
     rating: 4.8,
     totalProducts: 24,
     description: "Passionate organic farmer with 15 years of experience in sustainable agriculture. Specializing in pesticide-free vegetables grown using traditional farming methods combined with modern techniques.",
-    farmAddress: "Village Khanna, District Ludhiana, Punjab - 141401",
+    farmAddress: "Village Shamshabad, Rangareddy District, Telangana - 501218",
     visitingHours: "Mon-Sat: 7:00 AM - 6:00 PM",
   };
 
