@@ -2,6 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import farmerRamesh from "@/assets/farmer-ramesh.jpg";
+import farmerLakshmi from "@/assets/farmer-lakshmi.jpg";
+import farmerSuresh from "@/assets/farmer-suresh.jpg";
+import farmerMeena from "@/assets/farmer-meena.jpg";
 
 const farmers = [
   {
@@ -9,7 +13,7 @@ const farmers = [
     name: "Ramesh Kumar",
     location: "Rangareddy, Telangana",
     specialty: "Organic Vegetables",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ramesh",
+    image: farmerRamesh,
     phone: "+91 98765 43210",
   },
   {
@@ -17,7 +21,7 @@ const farmers = [
     name: "Lakshmi Devi",
     location: "Medak, Telangana",
     specialty: "Fresh Fruits",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lakshmi",
+    image: farmerLakshmi,
     phone: "+91 98765 43211",
   },
   {
@@ -25,7 +29,7 @@ const farmers = [
     name: "Suresh Patel",
     location: "Sangareddy, Telangana",
     specialty: "Dairy Products",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Suresh",
+    image: farmerSuresh,
     phone: "+91 98765 43212",
   },
   {
@@ -33,7 +37,7 @@ const farmers = [
     name: "Meena Singh",
     location: "Vikarabad, Telangana",
     specialty: "Grains & Pulses",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Meena",
+    image: farmerMeena,
     phone: "+91 98765 43213",
   },
 ];

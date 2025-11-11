@@ -7,24 +7,99 @@ import { Phone, MessageCircle, MapPin, Star, ShoppingCart } from "lucide-react";
 import { useParams, Link } from "react-router-dom";
 import vegetablesImg from "@/assets/vegetables.jpg";
 import fruitsImg from "@/assets/fruits.jpg";
+import farmerRamesh from "@/assets/farmer-ramesh.jpg";
+import farmerLakshmi from "@/assets/farmer-lakshmi.jpg";
+import farmerSuresh from "@/assets/farmer-suresh.jpg";
+import farmerMeena from "@/assets/farmer-meena.jpg";
+import farmerArjun from "@/assets/farmer-arjun.jpg";
+import farmerKavita from "@/assets/farmer-kavita.jpg";
 
 const FarmerProfile = () => {
   const { id } = useParams();
 
   // Mock farmer data
-  const farmer = {
-    id: 1,
-    name: "Ramesh Kumar",
-    location: "Rangareddy, Telangana",
-    specialty: "Organic Vegetables",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ramesh",
-    phone: "+91 98765 43210",
-    rating: 4.8,
-    totalProducts: 24,
-    description: "Passionate organic farmer with 15 years of experience in sustainable agriculture. Specializing in pesticide-free vegetables grown using traditional farming methods combined with modern techniques.",
-    farmAddress: "Village Shamshabad, Rangareddy District, Telangana - 501218",
-    visitingHours: "Mon-Sat: 7:00 AM - 6:00 PM",
+  const farmersData: Record<string, any> = {
+    "1": {
+      id: 1,
+      name: "Ramesh Kumar",
+      location: "Rangareddy, Telangana",
+      specialty: "Organic Vegetables",
+      image: farmerRamesh,
+      phone: "+91 98765 43210",
+      rating: 4.8,
+      totalProducts: 24,
+      description: "Passionate organic farmer with 15 years of experience in sustainable agriculture. Specializing in pesticide-free vegetables grown using traditional farming methods combined with modern techniques.",
+      farmAddress: "Survey No. 42, Village Tukkuguda, Rangareddy District",
+      visitingHours: "6:00 AM - 11:00 AM, All days",
+    },
+    "2": {
+      id: 2,
+      name: "Lakshmi Devi",
+      location: "Medak, Telangana",
+      specialty: "Fresh Fruits",
+      image: farmerLakshmi,
+      phone: "+91 98765 43211",
+      rating: 4.7,
+      totalProducts: 18,
+      description: "Expert fruit grower specializing in seasonal fruits. Known for high-quality produce and sustainable farming practices.",
+      farmAddress: "Kondapur Village, Medak District",
+      visitingHours: "7:00 AM - 12:00 PM, Mon-Sat",
+    },
+    "3": {
+      id: 3,
+      name: "Suresh Patel",
+      location: "Sangareddy, Telangana",
+      specialty: "Dairy Products",
+      image: farmerSuresh,
+      phone: "+91 98765 43212",
+      rating: 4.9,
+      totalProducts: 12,
+      description: "Third-generation dairy farmer providing fresh, organic dairy products from healthy, well-cared-for cattle.",
+      farmAddress: "Patancheru Road, Sangareddy",
+      visitingHours: "5:00 AM - 10:00 AM, All days",
+    },
+    "4": {
+      id: 4,
+      name: "Meena Singh",
+      location: "Vikarabad, Telangana",
+      specialty: "Grains & Pulses",
+      image: farmerMeena,
+      phone: "+91 98765 43213",
+      rating: 4.6,
+      totalProducts: 20,
+      description: "Dedicated farmer growing high-quality grains and pulses using organic methods and traditional seed varieties.",
+      farmAddress: "Chilkur Village, Vikarabad District",
+      visitingHours: "6:00 AM - 11:00 AM, All days",
+    },
+    "5": {
+      id: 5,
+      name: "Arjun Reddy",
+      location: "Nalgonda, Telangana",
+      specialty: "Organic Rice",
+      image: farmerArjun,
+      phone: "+91 98765 43214",
+      rating: 4.8,
+      totalProducts: 15,
+      description: "Organic rice farmer focusing on traditional rice varieties and sustainable farming practices.",
+      farmAddress: "NH 163, Nalgonda District",
+      visitingHours: "6:30 AM - 12:00 PM, Mon-Sat",
+    },
+    "6": {
+      id: 6,
+      name: "Kavita Sharma",
+      location: "Nizamabad, Telangana",
+      specialty: "Spices & Herbs",
+      image: farmerKavita,
+      phone: "+91 98765 43215",
+      rating: 4.7,
+      totalProducts: 22,
+      description: "Specialist in growing aromatic spices and fresh herbs using organic methods and careful cultivation.",
+      farmAddress: "Plot 78, Nizamabad Road, Nizamabad",
+      visitingHours: "6:00 AM - 11:00 AM, All days",
+    },
   };
+
+  const farmer = farmersData[id || "1"];
 
   const products = [
     {
