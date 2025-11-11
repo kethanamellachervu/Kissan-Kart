@@ -1,10 +1,33 @@
-import { ShoppingCart, Menu, Phone } from "lucide-react";
+import { ShoppingCart, Menu, User, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
+  const { toast } = useToast();
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    toast({
+      title: "Logged out successfully",
+    });
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
@@ -40,9 +63,28 @@ const Navbar = () => {
                 <ShoppingCart className="h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild>
-              <Link to="/contact">Contact Us</Link>
-            </Button>
+            {user ? (
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-muted-foreground">
+                  {user.email}
+                </span>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleLogout}
+                >
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Logout
+                </Button>
+              </div>
+            ) : (
+              <Button asChild>
+                <Link to="/auth">
+                  <User className="h-4 w-4 mr-2" />
+                  Login
+                </Link>
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -86,17 +128,32 @@ const Navbar = () => {
               About
             </Link>
             <div className="pt-2 space-y-2">
-              <Button className="w-full" asChild>
+              <Button className="w-full" variant="outline" asChild>
                 <Link to="/cart" onClick={() => setMobileMenuOpen(false)}>
                   <ShoppingCart className="h-4 w-4 mr-2" />
                   Cart
                 </Link>
               </Button>
-              <Button className="w-full" variant="outline" asChild>
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  Contact Us
-                </Link>
-              </Button>
+              {user ? (
+                <Button 
+                  className="w-full" 
+                  variant="outline"
+                  onClick={() => {
+                    handleLogout();
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Logout
+                </Button>
+              ) : (
+                <Button className="w-full" asChild>
+                  <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
+                    <User className="h-4 w-4 mr-2" />
+                    Login
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
         )}
