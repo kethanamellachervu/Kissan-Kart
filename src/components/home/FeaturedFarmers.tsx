@@ -24,22 +24,6 @@ const farmers = [
     image: farmerLakshmi,
     phone: "+91 98765 43211",
   },
-  {
-    id: 3,
-    name: "Suresh Patel",
-    location: "Sangareddy, Telangana",
-    specialty: "Dairy Products",
-    image: farmerSuresh,
-    phone: "+91 98765 43212",
-  },
-  {
-    id: 4,
-    name: "Meena Singh",
-    location: "Vikarabad, Telangana",
-    specialty: "Grains & Pulses",
-    image: farmerMeena,
-    phone: "+91 98765 43213",
-  },
 ];
 
 const FeaturedFarmers = () => {
