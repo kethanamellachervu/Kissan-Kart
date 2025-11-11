@@ -1,73 +1,164 @@
-# Welcome to your Lovable project
+# Kissan Kart
 
-## Project info
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue.svg)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.4.19-yellow.svg)](https://vitejs.dev/)
 
-**URL**: https://lovable.dev/projects/7967653c-70a6-4997-b8d7-7e5285bc1633
+A modern web platform connecting farmers directly with consumers, enabling the purchase of fresh, organic farm produce. Built with React, TypeScript, and Supabase for a seamless user experience.
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+- **Direct Farmer-Consumer Connection**: Browse products from verified local farmers
+- **Real-time Communication**: Contact farmers via phone, WhatsApp, or farm visits
+- **Flexible Delivery Options**: Choose home delivery or self-pickup from farms
+- **Product Categories**: Fruits, vegetables, dairy, and more
+- **Farmer Profiles**: Detailed information about farmers and their farms
+- **Secure Authentication**: User registration and login with role-based access
+- **Shopping Cart**: Add products and manage orders
+- **Responsive Design**: Optimized for desktop and mobile devices
 
-**Use Lovable**
+## 🚀 Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7967653c-70a6-4997-b8d7-7e5285bc1633) and start prompting.
+### Frontend
+- **React 18** - Modern React with hooks and functional components
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Beautiful and accessible UI components
+- **React Router** - Client-side routing
+- **React Query** - Data fetching and state management
 
-Changes made via Lovable will be committed automatically to this repo.
+### Backend & Database
+- **Supabase** - Backend-as-a-Service with PostgreSQL database
+- **Row Level Security** - Database-level access control
 
-**Use your preferred IDE**
+### Development Tools
+- **ESLint** - Code linting
+- **PostCSS** - CSS processing
+- **Autoprefixer** - CSS vendor prefixing
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📋 Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Before running this project, make sure you have the following installed:
 
-Follow these steps:
+- **Node.js** (version 18 or higher) - [Download here](https://nodejs.org/)
+- **npm** or **yarn** - Package manager
+- **Git** - Version control
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🛠️ Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/kethanamellachervu/Kissan-Kart.git
+   cd earth-to-door-app
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+3. **Environment Setup**
+   Create a `.env.local` file in the root directory and add your Supabase credentials:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to `http://localhost:5173` to view the application.
+
+## 📖 Usage
+
+### For Consumers
+1. **Browse Products**: Explore the wide range of fresh produce from local farmers
+2. **View Farmer Profiles**: Learn about farmers and their farming practices
+3. **Add to Cart**: Select products and manage your shopping cart
+4. **Contact Farmers**: Reach out directly via phone or WhatsApp
+5. **Choose Delivery**: Opt for home delivery or farm pickup
+
+### For Farmers
+1. **Create Profile**: Register as a farmer and set up your profile
+2. **List Products**: Add your farm produce to the platform
+3. **Manage Orders**: Handle customer inquiries and orders
+4. **Direct Communication**: Connect with customers personally
+
+## 🏗️ Project Structure
+
+```
+earth-to-door-app/
+├── public/                 # Static assets
+├── src/
+│   ├── components/         # Reusable UI components
+│   │   ├── ui/            # shadcn/ui components
+│   │   └── home/          # Home page components
+│   ├── pages/             # Page components
+│   ├── integrations/      # External service integrations
+│   │   └── supabase/      # Supabase client and types
+│   ├── hooks/             # Custom React hooks
+│   ├── lib/               # Utility functions
+│   └── assets/            # Images and media files
+├── supabase/              # Database migrations and config
+├── package.json           # Dependencies and scripts
+└── README.md             # Project documentation
 ```
 
-**Edit a file directly in GitHub**
+## 🗄️ Database Schema
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The application uses Supabase with the following main tables:
 
-**Use GitHub Codespaces**
+- **profiles**: User profiles with roles (farmer/customer)
+- **products**: Farm produce listings
+- **orders**: Customer orders
+- **farmers**: Detailed farmer information
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔧 Available Scripts
 
-## What technologies are used for this project?
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
 
-This project is built with:
+## 🤝 Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+We welcome contributions! Please follow these steps:
 
-## How can I deploy this project?
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Simply open [Lovable](https://lovable.dev/projects/7967653c-70a6-4997-b8d7-7e5285bc1633) and click on Share -> Publish.
+### Development Guidelines
 
-## Can I connect a custom domain to my Lovable project?
+- Follow the existing code style
+- Write clear, concise commit messages
+- Test your changes thoroughly
+- Update documentation as needed
 
-Yes, you can!
+## 📄 License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🙏 Acknowledgments
+
+- Built with [Lovable](https://lovable.dev/) - AI-powered development platform
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Icons from [Lucide React](https://lucide.dev/)
+
+## 📞 Support
+
+For support or questions:
+- Open an issue on GitHub
+- Contact the development team
+
+---
+
+**Made with ❤️ for farmers and consumers**
