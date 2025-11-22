@@ -8,8 +8,10 @@ import { Input } from "@/components/ui/input";
 import { ShoppingCart, MapPin, Leaf, Search, Phone, MessageCircle } from "lucide-react";
 import { products, categories } from "@/data/products";
 import { farmers } from "@/data/farmers";
+import { useCart } from "@/contexts/CartContext";
 
 const Products = () => {
+  const { addToCart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState("All Products");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -109,7 +111,11 @@ const Products = () => {
                               per {product.unit}
                             </div>
                           </div>
-                          <Button size="sm" className="bg-accent hover:bg-accent-hover">
+                          <Button
+                            size="sm"
+                            className="bg-accent hover:bg-accent-hover"
+                            onClick={() => addToCart(product)}
+                          >
                             <ShoppingCart className="h-4 w-4 mr-1" />
                             Add
                           </Button>
