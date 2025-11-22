@@ -10,6 +10,12 @@ export interface Farmer {
   rating: number;
   totalProducts: number;
   verified: boolean;
+  bio: string;
+  farmingExperience: number;
+  farmSize: string;
+  coordinates: { lat: number; lng: number };
+  visitInstructions: string;
+  farmingMethods: string[];
 }
 
 export const farmers: Farmer[] = [
@@ -25,6 +31,12 @@ export const farmers: Farmer[] = [
     rating: 4.8,
     totalProducts: 45,
     verified: true,
+    bio: "Third-generation organic farmer passionate about sustainable agriculture. Certified organic since 2015.",
+    farmingExperience: 20,
+    farmSize: "5 acres",
+    coordinates: { lat: 18.0037, lng: 79.5941 },
+    visitInstructions: "Farm is located 2km from Enabavi main road. Best visiting hours: 7 AM - 11 AM. Please call before visiting.",
+    farmingMethods: ["Organic", "Natural Composting", "Zero Pesticides"],
   },
   {
     id: "2",
@@ -38,6 +50,12 @@ export const farmers: Farmer[] = [
     rating: 4.9,
     totalProducts: 52,
     verified: true,
+    bio: "Specializing in seasonal fruits and vegetables with traditional farming wisdom passed down through generations.",
+    farmingExperience: 25,
+    farmSize: "7 acres",
+    coordinates: { lat: 17.3616, lng: 78.9672 },
+    visitInstructions: "Farm located near Pochampally handloom center. Open for visits on weekends. Prior appointment required.",
+    farmingMethods: ["Integrated Farming", "Water Conservation", "Crop Rotation"],
   },
   {
     id: "3",
@@ -51,6 +69,12 @@ export const farmers: Farmer[] = [
     rating: 4.7,
     totalProducts: 38,
     verified: true,
+    bio: "Expert in growing high-quality vegetables using modern farming techniques while maintaining traditional values.",
+    farmingExperience: 15,
+    farmSize: "4 acres",
+    coordinates: { lat: 17.4326, lng: 78.4071 },
+    visitInstructions: "Farm is 5 minutes from Mirjaguda bus stop. Visit between 6 AM - 10 AM for fresh morning harvest.",
+    farmingMethods: ["Drip Irrigation", "Greenhouse Farming", "Quality Seeds"],
   },
   {
     id: "4",
@@ -64,6 +88,12 @@ export const farmers: Farmer[] = [
     rating: 4.9,
     totalProducts: 28,
     verified: true,
+    bio: "Running a family dairy farm for over two decades. Our cows are grass-fed and well-cared for.",
+    farmingExperience: 22,
+    farmSize: "3 acres dairy farm",
+    coordinates: { lat: 18.6725, lng: 78.0945 },
+    visitInstructions: "Dairy farm visits available 6 AM - 8 AM daily. See fresh milk collection process. Advance booking required.",
+    farmingMethods: ["Grass-fed Dairy", "Hygienic Processing", "Natural Feed"],
   },
   {
     id: "5",
@@ -77,6 +107,12 @@ export const farmers: Farmer[] = [
     rating: 5.0,
     totalProducts: 65,
     verified: true,
+    bio: "Award-winning organic farmer. Transformed from conventional to organic farming and helping other farmers do the same.",
+    farmingExperience: 18,
+    farmSize: "8 acres",
+    coordinates: { lat: 18.7899, lng: 78.2847 },
+    visitInstructions: "Model organic farm open for educational visits. Group visits on Saturdays. Individual visits by appointment.",
+    farmingMethods: ["100% Organic", "Composting", "Seed Preservation", "Training Others"],
   },
   {
     id: "6",
@@ -90,5 +126,11 @@ export const farmers: Farmer[] = [
     rating: 4.6,
     totalProducts: 41,
     verified: true,
+    bio: "Specializing in leafy vegetables and herbs. Fresh harvest delivered same day within Kamareddy district.",
+    farmingExperience: 12,
+    farmSize: "2 acres",
+    coordinates: { lat: 18.3218, lng: 78.3391 },
+    visitInstructions: "Small farm near Kamareddy town. Casual visits welcome during harvest hours 5 AM - 9 AM.",
+    farmingMethods: ["Fresh Greens", "Daily Harvest", "Chemical-free"],
   },
 ];

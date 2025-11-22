@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart, User, Sprout } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/contexts/CartContext";
 
 const Header = () => {
+  const { getCartCount } = useCart();
+  const cartCount = getCartCount();
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
@@ -27,9 +32,14 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="icon" asChild>
+          <Button variant="ghost" size="icon" className="relative" asChild>
             <Link to="/cart">
               <ShoppingCart className="h-5 w-5" />
+              {cartCount > 0 && (
+                <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs">
+                  {cartCount}
+                </Badge>
+              )}
             </Link>
           </Button>
           <Button variant="outline" size="sm" asChild>

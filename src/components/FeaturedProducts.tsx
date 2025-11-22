@@ -4,8 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, MapPin, Leaf } from "lucide-react";
 import { products } from "@/data/products";
 import { Link } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext";
 
 const FeaturedProducts = () => {
+  const { addToCart } = useCart();
+
   return (
     <section className="py-16">
       <div className="container">
@@ -49,7 +52,11 @@ const FeaturedProducts = () => {
                       </div>
                       <div className="text-xs text-muted-foreground">per {product.unit}</div>
                     </div>
-                    <Button size="sm" className="bg-accent hover:bg-accent-hover">
+                    <Button
+                      size="sm"
+                      className="bg-accent hover:bg-accent-hover"
+                      onClick={() => addToCart(product)}
+                    >
                       <ShoppingCart className="h-4 w-4 mr-1" />
                       Add
                     </Button>
