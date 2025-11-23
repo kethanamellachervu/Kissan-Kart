@@ -1,35 +1,65 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Sprout } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useToast } from "@/hooks/use-toast";
 
 const Login = () => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [farmerEmail, setFarmerEmail] = useState("");
   const [farmerPassword, setFarmerPassword] = useState("");
+  const { login, isAuthenticated } = useAuth();
+  const { toast } = useToast();
+  const navigate = useNavigate();
 
-  const handleUserLogin = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/");
+    }
+  }, [isAuthenticated, navigate]);
+
+  const handleUserLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement user login logic
-    console.log("User login:", userEmail);
+    const success = await login(userEmail, userPassword, "customer");
+    if (success) {
+      toast({
+        title: "Login successful",
+        description: "Welcome to Kissan Kart!",
+      });
+    } else {
+      toast({
+        title: "Login failed",
+        description: "Please check your credentials",
+        variant: "destructive",
+      });
+    }
   };
 
-  const handleFarmerLogin = (e: React.FormEvent) => {
+  const handleFarmerLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement farmer login logic
-    console.log("Farmer login:", farmerEmail);
+    const success = await login(farmerEmail, farmerPassword, "farmer");
+    if (success) {
+      toast({
+        title: "Login successful",
+        description: "Welcome to your farmer dashboard!",
+      });
+    } else {
+      toast({
+        title: "Login failed",
+        description: "Please check your credentials",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       <main className="flex-1 flex items-center justify-center py-12 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container max-w-md">
           <div className="text-center mb-8">
@@ -76,12 +106,6 @@ const Login = () => {
                       />
                     </div>
                     <Button type="submit" className="w-full">Login</Button>
-                    <p className="text-sm text-center text-muted-foreground">
-                      Don't have an account?{" "}
-                      <Link to="/register" className="text-primary hover:underline">
-                        Register
-                      </Link>
-                    </p>
                   </form>
                 </CardContent>
               </Card>
@@ -117,12 +141,6 @@ const Login = () => {
                       />
                     </div>
                     <Button type="submit" className="w-full">Login</Button>
-                    <p className="text-sm text-center text-muted-foreground">
-                      New farmer?{" "}
-                      <Link to="/register" className="text-primary hover:underline">
-                        Register
-                      </Link>
-                    </p>
                   </form>
                 </CardContent>
               </Card>
@@ -130,7 +148,6 @@ const Login = () => {
           </Tabs>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
