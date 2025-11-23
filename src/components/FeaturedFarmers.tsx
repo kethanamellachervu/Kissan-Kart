@@ -22,7 +22,7 @@ const FeaturedFarmers = () => {
               <div className="relative h-48">
                 <img
                   src={farmer.image}
-                  alt={farmer.name}
+                  alt={`${farmer.name} - Farmer from ${farmer.location}, ${farmer.district}`}
                   className="w-full h-full object-cover"
                 />
                 {farmer.verified && (

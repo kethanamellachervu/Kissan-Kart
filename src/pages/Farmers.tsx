@@ -32,7 +32,7 @@ const Farmers = () => {
                   <div className="relative h-56">
                     <img
                       src={farmer.image}
-                      alt={farmer.name}
+                      alt={`${farmer.name} - Farmer from ${farmer.location}, ${farmer.district}`}
                       className="w-full h-full object-cover"
                     />
                     {farmer.verified && (

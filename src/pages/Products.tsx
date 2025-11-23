@@ -79,7 +79,7 @@ const Products = () => {
                     <div className="relative h-56 overflow-hidden">
                       <img
                         src={product.image}
-                        alt={product.name}
+                        alt={`${product.name} from ${product.farmerName}, ${product.location}`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       {product.organic && (
