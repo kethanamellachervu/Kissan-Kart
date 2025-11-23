@@ -51,8 +51,8 @@ const Hero = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1595855759920-86eec30e129a?q=80&w=1200"
-                alt="Fresh vegetables from Telangana farmers"
+                src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1400"
+                alt="Lush green Telangana farm landscape at sunrise with paddy fields and farmers working"
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>

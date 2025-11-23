@@ -64,7 +64,7 @@ const FarmerProfile = () => {
           <div className="absolute inset-0">
             <img
               src={farmer.image}
-              alt={farmer.name}
+              alt={`${farmer.name} - Farmer from ${farmer.location}, ${farmer.district}`}
               className="w-full h-full object-cover opacity-30"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
@@ -73,7 +73,7 @@ const FarmerProfile = () => {
             <div className="flex items-end gap-6">
               <img
                 src={farmer.image}
-                alt={farmer.name}
+                alt={`${farmer.name} - Telangana farmer specializing in ${farmer.specialization.join(', ')}`}
                 className="w-32 h-32 rounded-full border-4 border-background object-cover shadow-xl"
               />
               <div className="mb-2">
@@ -194,7 +194,7 @@ const FarmerProfile = () => {
                           <div className="relative h-40">
                             <img
                               src={product.image}
-                              alt={product.name}
+                              alt={`${product.name} - Fresh ${product.category.toLowerCase()} from ${farmer.name}`}
                               className="w-full h-full object-cover"
                             />
                             {product.organic && (
