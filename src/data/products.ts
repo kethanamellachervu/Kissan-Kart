@@ -93,7 +93,7 @@ export const products: Product[] = [
     farmerId: "6",
     farmerName: "Kavitha Devi",
     location: "Kamareddy",
-    image: "https://images.unsplash.com/photo-1615485500834-bc10199bc727?q=80&w=800",
+    image: "https://images.unsplash.com/photo-1583484963886-cfe2bff2945f?q=80&w=800",
     description: "Fresh organic coriander leaves. Aromatic and flavorful.",
     inStock: true,
     organic: true,
