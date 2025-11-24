@@ -15,6 +15,7 @@ import FarmerDashboard from "./pages/FarmerDashboard";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import FarmerProfile from "./pages/FarmerProfile";
+import GenerateFarmerImage from "./pages/GenerateFarmerImage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -90,6 +91,14 @@ const App = () => (
                 element={
                   <ProtectedRoute requireRole="farmer">
                     <FarmerDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/generate-image"
+                element={
+                  <ProtectedRoute requireRole="farmer">
+                    <GenerateFarmerImage />
                   </ProtectedRoute>
                 }
               />

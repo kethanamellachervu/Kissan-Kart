@@ -1,1 +1,4 @@
 project_id = "xmatdsvnjpzmqvhbgkuj"
+
+[functions.generate-farmer-image]
+verify_jwt = false
