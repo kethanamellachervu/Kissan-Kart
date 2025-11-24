@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Package, TrendingUp, Star, MapPin } from "lucide-react";
+import { Package, TrendingUp, Star, MapPin, Image } from "lucide-react";
 import { ProductUploadForm } from "@/components/farmer/ProductUploadForm";
 import { ProductList } from "@/components/farmer/ProductList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 
 const FarmerDashboard = () => {
   const [refreshTrigger, setRefreshTrigger] = useState(0);
@@ -18,9 +20,19 @@ const FarmerDashboard = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 py-12">
-        <div className="container">
-          <h1 className="text-4xl font-bold mb-2">Farmer Dashboard</h1>
-          <p className="text-muted-foreground mb-8">Manage your farm and products</p>
+          <div className="container">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h1 className="text-4xl font-bold mb-2">Farmer Dashboard</h1>
+              <p className="text-muted-foreground">Manage your farm and products</p>
+            </div>
+            <Button asChild variant="outline">
+              <Link to="/generate-image">
+                <Image className="mr-2 h-4 w-4" />
+                Generate Images
+              </Link>
+            </Button>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <Card>
