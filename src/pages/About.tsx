@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Leaf, Users, Truck, Heart } from "lucide-react";
-
+//About page for Kissan Kart
 const About = () => {
   const features = [
     {

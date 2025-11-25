@@ -16,6 +16,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import FarmerProfile from "./pages/FarmerProfile";
 import GenerateFarmerImage from "./pages/GenerateFarmerImage";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -67,6 +68,14 @@ const App = () => (
                 element={
                   <ProtectedRoute>
                     <About />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <Profile />
                   </ProtectedRoute>
                 }
               />

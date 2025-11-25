@@ -35,6 +35,9 @@ const Header = () => {
             <Link to="/about" className="text-sm font-medium hover:text-primary transition-colors">
               About
             </Link>
+            <Link to="/profile" className="text-sm font-medium hover:text-primary transition-colors">
+              Profile
+            </Link>
           </nav>
 
           <div className="flex items-center gap-3">

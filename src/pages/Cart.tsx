@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
-
+//Cart page for Kissan Kart
 const Cart = () => {
   const { items, updateQuantity, removeFromCart, getCartTotal } = useCart();
 

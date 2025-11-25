@@ -22,7 +22,7 @@ import { farmers } from "@/data/farmers";
 import { products } from "@/data/products";
 import { reviews } from "@/data/reviews";
 import { useCart } from "@/contexts/CartContext";
-
+//Farmer Profile page for Kissan Kart
 const FarmerProfile = () => {
   const { id } = useParams();
   const { addToCart } = useCart();

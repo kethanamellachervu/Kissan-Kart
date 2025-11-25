@@ -9,7 +9,7 @@ import { ShoppingCart, MapPin, Leaf, Search, Phone, MessageCircle } from "lucide
 import { products, categories } from "@/data/products";
 import { farmers } from "@/data/farmers";
 import { useCart } from "@/contexts/CartContext";
-
+//Products page for Kissan Kart
 const Products = () => {
   const { addToCart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState("All Products");

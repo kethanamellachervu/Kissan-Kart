@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Loader2, Download } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-
+//Generate Farmer Image page for Kissan Kart
 const GenerateFarmerImage = () => {
   const { toast } = useToast();
   const [prompt, setPrompt] = useState(

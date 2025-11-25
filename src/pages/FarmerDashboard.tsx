@@ -8,7 +8,7 @@ import { ProductUploadForm } from "@/components/farmer/ProductUploadForm";
 import { ProductList } from "@/components/farmer/ProductList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-
+//Farmer Dashboard page for Kissan Kart
 const FarmerDashboard = () => {
   const [refreshTrigger, setRefreshTrigger] = useState(0);
 

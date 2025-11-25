@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Phone, MessageCircle, MapPin, Star, CheckCircle, Package } from "lucide-react";
 import { farmers } from "@/data/farmers";
 import { Link } from "react-router-dom";
-
+//Farmers page for Kissan Kart
 const Farmers = () => {
   return (
     <div className="min-h-screen flex flex-col">

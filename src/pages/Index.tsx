@@ -4,7 +4,7 @@ import Categories from "@/components/Categories";
 import FeaturedFarmers from "@/components/FeaturedFarmers";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import Footer from "@/components/Footer";
-
+//Home page for Kissan Kart
 const Index = () => {
   return (
     <div className="min-h-screen">

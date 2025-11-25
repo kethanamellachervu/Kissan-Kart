@@ -30,13 +30,23 @@ const Checkout = () => {
 
   const handlePlaceOrder = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Save placed order data to localStorage for Profile page
+    const existingOrdersRaw = localStorage.getItem("profile-placed-orders");
+    const existingOrders = existingOrdersRaw ? JSON.parse(existingOrdersRaw) : [];
+    const newOrder = {
+      id: "order_" + new Date().getTime(),
+      date: new Date().toISOString(),
+      items: items.map(({ id, name, quantity, price }) => ({ id, name, quantity, price })),
+      total,
+    };
+    localStorage.setItem("profile-placed-orders", JSON.stringify([newOrder, ...existingOrders]));
     
-    // TODO: Implement actual order placement logic
     toast({
       title: "Order Placed Successfully! 🎉",
-      description: `Your order of ₹${total} has been placed. Farmer will contact you shortly.`,
+      description: `Your order of ₹${total} has been placed.`,
     });
-    
+
     clearCart();
     navigate("/");
   };
